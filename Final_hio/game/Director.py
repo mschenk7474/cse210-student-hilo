@@ -29,15 +29,17 @@ class Director:
         card1 = Dealer.First_card()
         card2 = Dealer.Second_card()
         while True:
-            print("The first card is {}".format(card1))
-            play = str(input("Higher of lower: [h/l]: "))
-            print("The scond card is {}".format(card2))
-            print("")
+            print("The card is: {}".format(card1))
+            play = str(input("Higher of lower? [h/l] "))
+            print("Next card was: {}".format(card2))
             score = Dealer.get_points(card1, card2, score, play)
-            print(score)
-            again = str(input("Do you want to play again [y/n]: "))
+            print(f"Your score is: {score}")
+            again = str(input("Keep playing? [y/n]: "))
+            print("")
             card1 = card2
             card2 = Dealer.Second_card()
+            if card1 == card2:
+                card2 = Dealer.Second_card()
             if again == "n":
                 print("Thanks for playing!")
                 break
