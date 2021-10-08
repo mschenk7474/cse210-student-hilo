@@ -19,6 +19,7 @@ class Dealer:
         for i in range(1):
          result = random.randint(1,13)
          self.second_card = result
+         return self.second_card
         #prac = Dealer.First_card()
         #print(prac)
 
