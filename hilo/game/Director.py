@@ -51,17 +51,33 @@ class Director:
         points = self.dealer.get_points()
         self.score += points
         
+    #def do_outputs(self):
+        #"""Outputs the important game information for each round of play. In 
+        #this case, that means the dice that were rolled and the score.
+
+        #Args:
+           #self (Director): An instance of Director.
+        #"""
+        #print(f"\nYou rolled: {self.thrower.dice}")
+        #print(f"Your score is: {self.score}")
+        #if self.dealer.can_throw():
+            #choice = input("Roll again? [y/n] ")
+            #self.keep_playing = (choice == "y")
+        #else:
+            #self.keep_playing = False
     def do_outputs(self):
         """Outputs the important game information for each round of play. In 
         this case, that means the dice that were rolled and the score.
-
+ 
         Args:
             self (Director): An instance of Director.
         """
-        print(f"\nYou rolled: {self.thrower.dice}")
+        print(f"\nThe card is: {self.dealer.card1}")
+        guess = self.dealer.guess_card()
+        print(f"Next card was: {self.dealer.card2}")
         print(f"Your score is: {self.score}")
-        if self.dealer.can_throw():
-            choice = input("Roll again? [y/n] ")
+        if self.dealer.can_deal():
+            choice = input("Keep playing? [y/n] ")
             self.keep_playing = (choice == "y")
         else:
             self.keep_playing = False
