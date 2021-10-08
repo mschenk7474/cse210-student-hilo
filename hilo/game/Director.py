@@ -18,7 +18,7 @@ class Director:
             self (Director): an instance of Director.
         """
         self.keep_playing = True
-        self.score = 0
+        self.score = 300
         self.dealer = Dealer()
 
     def start_game(self):
@@ -28,18 +28,18 @@ class Director:
             self (Director): an instance of Director.
         """
         while self.keep_playing:
-            self.get_inputs()
+            #self.get_inputs()
             self.do_updates()
             self.do_outputs()
 
-    def get_inputs(self):
-        """Gets the inputs at the beginning of each round of play. In this case,
-        that means throwing the dice.
+    #def get_inputs(self):
+        #"""Gets the inputs at the beginning of each round of play. In this case,
+        #that means throwing the dice.
 
-        Args:
-            self (Director): An instance of Director.
-        """
-        self.thrower.throw_dice()
+        #Args:
+            #self (Director): An instance of Director.
+        #"""
+        #self.thrower.throw_dice()
         
     def do_updates(self):
         """Updates the important game information for each round of play. In 
@@ -72,11 +72,11 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        print(f"\nThe card is: {self.dealer.card1}")
-        guess = self.dealer.guess_card()
-        print(f"Next card was: {self.dealer.card2}")
+        print(f"\nThe card is: {self.dealer.first_card}")
+        #guess = self.dealer.guess_card()
+        print(f"Next card was: {self.dealer.second_card}")
         print(f"Your score is: {self.score}")
-        if self.dealer.can_deal():
+        if self.score > 0:
             choice = input("Keep playing? [y/n] ")
             self.keep_playing = (choice == "y")
         else:

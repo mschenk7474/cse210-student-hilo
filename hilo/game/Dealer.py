@@ -1,25 +1,27 @@
 import random
 class Dealer:
     def __init__(self):
-        self.first_card = None
-        self.second_card = None
-        self.score = 0
+        self.first_card = 0
+        self.second_card = 0
+        self.score = 300
 
-    def First_card():
+    def First_card(self):
         """
         This is where we will create the first random card
         """
         options = [i for i in range(13)]
         return random.choice(options)
 
-    def Second_card(self):
+    def Second_card():
         """
         This is where we will create the second random card
         """
-        for i in range(1):
-         result = random.randint(1,13)
-         self.second_card = result
-         return self.second_card
+        options = [i for i in range(13)]
+        return random.choice(options)
+        #for i in range(1):
+         #result = random.randint(1,13)
+         #self.second_card = result
+         #return self.second_card
         #prac = Dealer.First_card()
         #print(prac)
 
@@ -34,17 +36,17 @@ class Dealer:
         return score -75
         """
         if self.second_card > self.first_card:
-            return self.score + 100
+            return 100
         else:
-            return self.score - 75
-    def can_deal(self):
-        """
-        This function tells the user if they can get dealt another card or not,
-        and that is based on the score they get. If the score is equal to or below 
-        zero, they can't play again. Other than that, they can continue to play as
-        they wish.
+            return -75
+    #def can_deal(self):
+       # """
+        #This function tells the user if they can get dealt another card or not,
+        #and that is based on the score they get. If the score is equal to or below 
+        #zero, they can't play again. Other than that, they can continue to play as
+        #they wish.
 
-        Returns:
-        Boolean. True if the score is greater than 0. False if otherwise.
-        """
-        return (self.score > 0)
+        #Returns:
+        #Boolean. True if the score is greater than 0. False if otherwise.
+        #"""
+        #return (self.score > 0)
