@@ -5,11 +5,12 @@ class Dealer:
         self.second_card = None
         self.score = 0
 
-    def First_card(self):
+    def First_card():
         """
         This is where we will create the first random card
         """
-        pass
+        options = [i for i in range(13)]
+        return random.choice(options)
 
     def Second_card(self):
         """
@@ -18,6 +19,8 @@ class Dealer:
         for i in range(1):
          result = random.randint(1,13)
          self.second_card = result
+        #prac = Dealer.First_card()
+        #print(prac)
 
     def get_points(self):
         """
