@@ -32,13 +32,13 @@ class Dealer:
         """
 
         if (card_1 > card_2) & (play == "l"):
-            print("you are right")
+            print("You are right")
             return  (score + 100)
         elif (card_2 > card_1) & (play == "h"):
-            print("you are right")
+            print("You are right")
             return (score + 100)
         else:
-            print("you are wrong")
+            print("You are wrong")
             return (score -75)
 
     def can_deal(self):
